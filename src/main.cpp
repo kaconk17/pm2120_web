@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+#include <SPI.h>
 #include "SimpleModbusMaster.h"
 
 #define connection_error_led 13
@@ -88,9 +88,6 @@ void loop()
   if(newTimer -  timer >= 5000){
     Serial.println();
     Serial.print("VOLTAGE : ");
-//    Serial.println(volt[0]);
-//    Serial.print("REGISTER 3028 : ");
-//    Serial.println(volt[1]);
 
     Serial.print(f_2uint_float(volt[1],volt[0]));
     Serial.println(" V");
